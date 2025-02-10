@@ -1,0 +1,42 @@
+body
+{
+    background-color: #ffdd99;
+    font-family: Palatino;
+}
+
+p
+{
+    font-size: 15px;
+
+}
+
+h1
+{
+    color : #661400;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+h2
+{
+    color: #b34700;
+    text-transform: uppercase;
+}
+
+.end
+{
+    color : white;
+    background-color: #661400;
+    padding: 15px;
+}
+
+section > p:first-of-type:first-letter
+{
+    font-size: 50px;
+}
+
+acronym
+{
+    text-transform: uppercase;
+}
+
