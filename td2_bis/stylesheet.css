@@ -1,0 +1,37 @@
+q
+{
+    color: #1d8791;
+}
+
+article
+{
+    background-color: #e2c5a6;
+    border: 0.15em solid blue;
+    padding : 1em;
+};
+    
+strong
+{
+    size : larger;
+    color : #184F79;
+}
+
+h2
+{
+    color: #184F79;
+}
+
+.fluo
+{
+    text-decoration: #4dc8b9;
+}
+
+h1
+{
+    text-align : center;
+}
+
+img
+{
+    float : right;
+}
