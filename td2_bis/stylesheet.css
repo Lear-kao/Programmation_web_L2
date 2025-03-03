@@ -1,37 +1,31 @@
-q
-{
+q {
     color: #1d8791;
 }
 
-article
-{
+article {
     background-color: #e2c5a6;
     border: 0.15em solid blue;
-    padding : 1em;
-};
-    
-strong
-{
-    size : larger;
-    color : #184F79;
+    padding: 1em;
 }
 
-h2
-{
+strong {
+    font-size: larger;
     color: #184F79;
 }
 
-.fluo
-{
-    text-decoration: #4dc8b9;
+h2 {
+    color: #184F79;
 }
 
-h1
-{
-    text-align : center;
+.fluo {
+    text-decoration: underline;
+    text-decoration-color: #4dc8b9;
 }
 
-img
-{
-    float : right;
+h1 {
+    text-align: center;
+}
+
+img {
+    float: right;
 }
