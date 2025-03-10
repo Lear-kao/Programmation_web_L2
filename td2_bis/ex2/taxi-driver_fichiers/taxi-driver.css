@@ -98,10 +98,45 @@ footer{
 }
 }
 
-@media screen and (max-width : 600) and (max-height : 600) 
+@media screen and ( max-width : 600px) and (min-width : 400px) 
+{
+    header{
+        color: white;
+        background-color: #CAA3A6;
+        margin: 0px;
+        padding: 0px;
+        text-align: center;
+        width: 100%;
+        position: fixed;
+        top: 0px;
+        height: 4em;
+    }
+    h2{
+        color:#305B66;
+    }
+    img{
+        width:150px;
+        float:unset;
+        display: block;
+        margin: auto;
+        border-radius: 50px;
+    }
+    p
+    {
+        margin: 2em;
+    }
+    .menu not(:first-child)
+    {
+        visibility: hidden;
+    }
+
+    
+}
+
+@media (max-width : 400px) and (max-height : 400px) 
 {
     html,body
     {
-        display: none;
+        visibility : hidden;
     }
 }
