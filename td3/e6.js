@@ -1,0 +1,1 @@
+var tab = ["poire","raisin","orange","framboise"]
