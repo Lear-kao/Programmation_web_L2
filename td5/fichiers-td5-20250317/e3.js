@@ -1,12 +1,18 @@
-var ancienX;
-var ancienY;
+var ancienX, ancienY, elementActuel;
 var sourisEnfoncee = false;
-var temp;
+
+let bouton = document.getElementById("bouton");
 
 function mouseDown(event) {
     sourisEnfoncee = true;
+    elementActuel = event.target.closest("div"); // Stocke l'élément en cours de déplacement
     ancienX = event.clientX;
     ancienY = event.clientY;
+
+    // Stocke la position actuelle de l'élément
+    elementActuel.style.position = "absolute"; // S'assure qu'il est positionnable
+    elementActuel.departX = parseInt(getComputedStyle(elementActuel).left) || 0;
+    elementActuel.departY = parseInt(getComputedStyle(elementActuel).top) || 0;
 
     console.log("Souris enfoncée à :", ancienX, ancienY);
 }
@@ -16,20 +22,29 @@ document.querySelectorAll(".postit").forEach(element => {
 });
 
 function mouseMove(event) {
-    if (sourisEnfoncee)
-    {
-        var depX = event.clientX - (ancienX)+"px";
-        var depY = event.clientY - (ancienY)+"px";
-        event.target.style.top = (300+depX)+"px";
-        event.target.style.left = (300+depY)+"px";
-        console.log("Position actuelle :", event.target.style.top, event.target.style.left);
+    if (sourisEnfoncee && elementActuel) {
+        var depX = event.clientX - ancienX;
+        var depY = event.clientY - ancienY;
+        
+        elementActuel.style.left = (elementActuel.departX + depX) + "px";
+        elementActuel.style.top = (elementActuel.departY + depY) + "px";
     }
 }
 
-// Fonction déclenchée lors du relâchement de la souris
 function mouseUp() {
     sourisEnfoncee = false;
+    elementActuel = null;
+}
+
+function addiv(event)
+{
+    var newdiv = document.createElement("div");
+    newdiv.classList.add("postit");
+    newdiv.textContent = prompt("nouveau postit : ");   
+    newdiv.addEventListener("mousedown", mouseDown);
+    document.getElementById("body").appendChild(newdiv);
 }
 
 document.addEventListener("mousemove", mouseMove);
 document.addEventListener("mouseup", mouseUp);
+bouton.addEventListener("click",addiv);
