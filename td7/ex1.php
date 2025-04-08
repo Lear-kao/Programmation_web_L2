@@ -10,8 +10,8 @@ for( $i = 0; $i < $n ; $i +=1 )
     }
     $txt .= "</tr>";
 }
+
 echo($txt);
-var_dump($n);
 
 function month($mois)
 {
@@ -32,6 +32,7 @@ function month($mois)
     );
     return $trs[$mois];
 }
+
 $date = explode(" ","15 janvier 2012");
 $res_date = "<p>".$date[0]."/".month($date[1])."/".$date[2]."</p>";
 echo($res_date)
