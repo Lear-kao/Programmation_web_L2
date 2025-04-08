@@ -13,7 +13,7 @@ function update()
         newposx = posx+dx;
     }
     if( newposx-5 < 0 ){
-        dx = -5 * Math.random();
+        dx = 5 * Math.random();
         newposx = posx+dx;
     }
     if( newposy + 5 > 500 ){
@@ -21,11 +21,14 @@ function update()
         newposy = posy+dy;
     }
     if( newposy-5 < 0 ){
-        dy = -5 * Math.random();
+        dy = 5 * Math.random();
         newposy = posy+dy;
     }
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.beginPath();
+    ctx.strokeStyle = "black";
+    ctx.lineWidth = 3;
+    ctx.strokeRect(0,0,canvas.width,canvas.height);
     ctx.arc(newposx, newposy, 10, 0, Math.PI * 2);
     ctx.fill()
     posx = newposx;
