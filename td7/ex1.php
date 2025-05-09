@@ -1,15 +1,16 @@
 <?php
-$n = $_GET["n"];
+$n = isset($_GET["n"]) ? intval($_GET["n"]) : 5;
 $txt = "<table>";
 for( $i = 0; $i < $n ; $i +=1 )
 {
     $txt .= "<tr>";
-    for(  $j = 0; $j < $n; $j+=1)
+    for(  $j = 0; $j <$n; $j+=1)
     {
         $txt .= "<td>" . $i * $j . "</td>";
     }
-    $txt .= "</tr>";
+    $txt .= "</tr>";    
 }
+$txt .= "</table>";
 
 echo($txt);
 
@@ -34,7 +35,7 @@ function month($mois)
 }
 
 $date = explode(" ","15 janvier 2012");
-$res_date = "<p>".$date[0]."/".month($date[1])."/".$date[2]."</p>";
+$res_date = "<p>".$date[0]."/".$date[1]."/".$date[2]."</p>";
 echo($res_date)
 
 ?>
